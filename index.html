@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    <title>Primer Ejercicio Vue</title>
+</head>
+<body>
+
+    <h1>Agregar Tareas Vue</h1>
+
+<div id="data"  > 
+    <ul>
+        <li v-for="tarea of tareas" >{{tarea}}</li>
+                
+    </ul>
+
+    <input  v-model="tarea" type="text">
+    <button @click="agregarTarea" >agregar tarea</button>
+</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+
+<script>
+
+const prueba = new Vue ({
+
+el:'#data',
+data:{
+
+tareas:[],
+tarea:"",
+
+},
+
+  methods:{
+    agregarTarea(){
+        this.tareas.push(this.tarea)
+        this.tarea = ""
+    }
+
+  } ,
+
+});
+
+</script>
+
+</body>
+</html>
