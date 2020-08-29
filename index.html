@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
     
     
     <title>Primer Ejercicio Vue</title>
@@ -12,13 +13,16 @@
     <h1>Agregar Tareas Vue</h1>
 
 <div id="data"  > 
-    <ul>
-        <li v-for="tarea of tareas" >{{tarea}}</li>
-                
-    </ul>
+  
 
     <input  v-model="tarea" type="text">
-    <button @click="agregarTarea" >agregar tarea</button>
+    <button @click="agregarTarea" >Agregar Tarea</button>
+    <button @click="limpiarPantalla">Limpiar</button>
+
+    <ol>
+        <li v-for="tarea of tareas" >{{tarea}}</li>
+                
+    </ol>
 </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
@@ -39,6 +43,11 @@ tarea:"",
     agregarTarea(){
         this.tareas.push(this.tarea)
         this.tarea = ""
+    },
+
+    limpiarPantalla(){
+ 
+        this.tareas = ""
     }
 
   } ,

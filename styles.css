@@ -1,0 +1,24 @@
+
+
+
+body{
+    background: green;
+    text-align:center ;
+}
+
+
+#data{
+
+background: white;
+    border: 2px solid black;
+    width: 700px;
+    margin: auto;
+    height: 500px;
+    padding: 42px;
+}
+
+ol{
+
+
+    text-align: start;
+}
